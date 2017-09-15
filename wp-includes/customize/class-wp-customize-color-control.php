@@ -18,7 +18,6 @@ class WP_Customize_Color_Control extends WP_Customize_Control {
 	/**
 	 * Type.
 	 *
-	 * @access public
 	 * @var string
 	 */
 	public $type = 'color';
@@ -26,7 +25,6 @@ class WP_Customize_Color_Control extends WP_Customize_Control {
 	/**
 	 * Statuses.
 	 *
-	 * @access public
 	 * @var array
 	 */
 	public $statuses;
@@ -35,7 +33,6 @@ class WP_Customize_Color_Control extends WP_Customize_Control {
 	 * Mode.
 	 *
 	 * @since 4.7.0
-	 * @access public
 	 * @var string
 	 */
 	public $mode = 'full';
@@ -94,8 +91,7 @@ class WP_Customize_Color_Control extends WP_Customize_Control {
 		?>
 		<# var defaultValue = '#RRGGBB', defaultValueAttr = '',
 			isHueSlider = data.mode === 'hue';
-
-		if ( data.defaultValue && ! isHueSlider ) {
+		if ( data.defaultValue && _.isString( data.defaultValue ) && ! isHueSlider ) {
 			if ( '#' !== data.defaultValue.substring( 0, 1 ) ) {
 				defaultValue = '#' + data.defaultValue;
 			} else {
